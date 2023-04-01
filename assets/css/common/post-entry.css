@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     gap: var(--content-gap);
     overflow: hidden;
-    max-height: calc(var(--post-entry-size)*2.1);
+    height: calc(var(--post-entry-size)*2.1);
 }
 
 .section {
@@ -82,10 +82,20 @@
 }
 
 .post-entry:hover .entry-cover img {
-    filter: brightness(0.8);
+    filter: brightness(0.85);
 }
 
 .entry-cover a {
     color: var(--secondary);
     box-shadow: 0 1px 0 var(--primary);
+}
+
+.more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: white;
+    font-weight: 600;
+    text-shadow: 0 0 5px #00000066;
 }

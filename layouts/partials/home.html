@@ -20,15 +20,7 @@
     <h2 class="section">
         Popular Images
     </h2>
-    <section class="entry-grid popular-images">
-        {{- range $imgUrl := $images }}
-        <article class="post-entry">
-            <div class="entry-cover fill-entry">
-                <img class="entry-img" src="{{ $imgUrl }}" alt="image">
-            </div>
-            <a class="fill-entry" aria-label="post link to Image" href="{{ $imgUrl }}"></a>
-        </article>
-        {{- end -}}
+    <section class="entry-grid" id="popular_images">
     </section>
 </article>
 {{- /*end of posts*/ -}}
