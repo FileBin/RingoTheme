@@ -2,7 +2,7 @@
 {{- $images := site.Params.testingImages -}}
 
 {{- with site.Params.home }}
-<article class="first-entry home-info">
+<article class="first-entry home-info section">
     <header class="entry-header">
         <h1>{{ .Title | markdownify }}</h1>
     </header>
@@ -16,16 +16,21 @@
 
 
 {{- /*begin of posts*/ -}}
-<section class="entry-grid">
-    {{- range $imgUrl := $images }}
-    <article class="post-entry">
-        <div class="entry-cover fill-entry">
-            <img class="entry-img" src="{{ $imgUrl }}" alt="image">
-        </div>
-        <a class="fill-entry" aria-label="post link to Image" href="{{ $imgUrl }}"></a>
-    </article>
-    {{- end -}}
-</section>
+<article class="section">
+    <h2 class="section">
+        Popular Images
+    </h2>
+    <section class="entry-grid popular-images">
+        {{- range $imgUrl := $images }}
+        <article class="post-entry">
+            <div class="entry-cover fill-entry">
+                <img class="entry-img" src="{{ $imgUrl }}" alt="image">
+            </div>
+            <a class="fill-entry" aria-label="post link to Image" href="{{ $imgUrl }}"></a>
+        </article>
+        {{- end -}}
+    </section>
+</article>
 {{- /*end of posts*/ -}}
 
 {{- end -}}

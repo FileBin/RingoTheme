@@ -1,5 +1,18 @@
 {{- define "main" }}
 
+{{- $images := site.Params.testingImages -}}
+
+{{- if site.Params.testing }}
+<script>
+    const testing = true;
+
+    var testingImages = [];
+    {{- range $imgUrl := $images }}
+        testingImages.push("{{ $imgUrl }}");
+    {{- end -}}
+</script>
+{{- end -}}
+
 {{- if not .IsHome | and .Title }}
 <header class="page-header">
   {{- partial "breadcrumbs.html" . }}

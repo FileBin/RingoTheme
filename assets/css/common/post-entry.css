@@ -3,6 +3,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: var(--content-gap);
+    overflow: hidden;
+    max-height: calc(var(--post-entry-size)*2.1);
+}
+
+.section {
+    margin-bottom: var(--gap);
 }
 
 .home-info .entry-content {
@@ -67,11 +73,16 @@
 }
 
 .entry-cover img {
+    transition: filter 0.1s;
     object-fit: cover;
     border-radius: var(--radius);
     pointer-events: none;
     width: 100%;
     height: 100%;
+}
+
+.post-entry:hover .entry-cover img {
+    filter: brightness(0.8);
 }
 
 .entry-cover a {
