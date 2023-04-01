@@ -1,0 +1,31 @@
+{{- $testing := site.Params.testing -}}
+{{- $images := site.Params.testingImages -}}
+
+{{- with site.Params.home }}
+<article class="first-entry home-info">
+    <header class="entry-header">
+        <h1>{{ .Title | markdownify }}</h1>
+    </header>
+    <div class="entry-content">
+        {{ .Content | markdownify }}
+    </div>
+    <footer class="entry-footer">
+        {{ partial "social_icons.html" site.Params.socialIcons }}
+    </footer>
+</article>
+
+
+{{- /*begin of posts*/ -}}
+<section class="entry-grid">
+    {{- range $imgUrl := $images }}
+    <article class="post-entry">
+        <div class="entry-cover fill-entry">
+            <img class="entry-img" src="{{ $imgUrl }}" alt="image">
+        </div>
+        <a class="fill-entry" aria-label="post link to Image" href="{{ $imgUrl }}"></a>
+    </article>
+    {{- end -}}
+</section>
+{{- /*end of posts*/ -}}
+
+{{- end -}}
